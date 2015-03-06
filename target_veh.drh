@@ -1,4 +1,3 @@
-#define D 0.1
 #define m 2273
 #define Iz 4423
 #define Cf 108000
@@ -12,10 +11,12 @@
 #define k5 1
 #define k6 10
 
-[0,120] sx;
-[0,30] sy;
-[0,3] Psi;
-[-.15, .15] delta;
+[0,1] sx;
+[0,1] sy;
+[-1,3] Psi;
+[-1,1] Psi_dot;
+[-1,1] Beta;
+[-0.15, 0.15] delta;
 [0,10] v;
 [0, 10] time;
 
@@ -44,14 +45,14 @@
 
     invt:
     // X position must be greater than or equal to 0
-    (x>=0);
+    (sx>=0);
     // Velocity must be greater than or equal to 0
     (v>=0);
 
     flow:
     /* Plant equations */
     // Compute rate of change of the slip angle
-    d/dt[Beta]=((((Cr*lr-Cf*lf)/(m*v^2))-1)(Psi_dot))+((Cf*delta)/(mv))-(((Cf-Cr)/mv)*Beta);
+    d/dt[Beta]=((((Cr*lr-Cf*lf)/(m*v*v))-1)*(Psi_dot))+((Cf*delta)/(m*v))-(((Cf-Cr)/m*v)*Beta);
     // Rate of change of yaw rate
     d/dt[Psi_dot]=(((Cr*lr-Cf*lf)/Iz)*Beta)-(((Cf*lf^2-Cr*lr^2)/Iz)*(Psi_dot/v))+((Cf*lf/Iz)*delta);
     // Rate of change of the heading angle is equal to yaw rate
@@ -65,6 +66,15 @@
     // Rate of change of front wheel angle.
     d/dt[delta]=k1*((cos(acos(1/(v*cos(v))))*(sin(v)-sy))-(sin(acos(1/(v*cos(v))))*(v-sx)))+k2*(acos(1/(v*cos(v)))-Psi)+k3*((v*sin(v)/sqrt(v^2-(cos(v))^2))-Psi_dot)-k4*(delta);
 
+    jump:
+}
+
+init: 
+@1 (and (sx=0) (sy=0));
+
+goal:
+@1 (and (sx > 0.45));
+
     /*
     // Rate of change of front wheel angle
     vw=k1*((cos(Psi_d)*(sy_d-sy))-(sin(Psi_d)*(sx_d-sx)))+k2*(Psi_d-Psi)+k3*(Psi_dot_d-Psi_dot)-k4*(delta);
@@ -77,5 +87,3 @@
     // Requested Position
     sx_d=v;
     sy_d=sin(v);*/
-
-}

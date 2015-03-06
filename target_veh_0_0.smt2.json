@@ -60,7 +60,7 @@
 	"mode": "1",
 	"step": "0",
 	"values": [
-{ "time": [0, 0], "enclosure": [1, 1.0703125]}
+{ "time": [0, 0], "enclosure": [2, 2]}
 	]
 }
 

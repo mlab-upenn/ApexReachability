@@ -39,6 +39,10 @@
 // Longitudinal acceleration
 #define ax k5*(cos(Psi_d)*(sx_d-sx)+sin(Psi_d)*(sy_d-sy))+k6*(v_d-v)
 
+// Environmental vehicle constants
+#define amax_env 2
+#define amin_env -2
+
 // Bounds on variables
 [0,20] sx;
 [0,20] sy;
@@ -59,6 +63,9 @@
 [-5,5] sx_dot;
 [-5,5] sy_dot;
 [-5,5] delta_dot;
+[0,20] sx_env;
+[0,10] v_env;
+[-2,2] a_env;
 
 // Dynamics
 {
@@ -111,6 +118,10 @@
     d/dt[delta_dot]=-k1*(sy_dot)-k2*(Psi_dot)-k3*(Psi_ddot)-k4*(delta_dot);
    
    /* Second Vehicle */
+    d/dt[sx_env]=v_env;
+    d/dt[v_env]=a_env;
+    d/dt[a_env]=0;
+
 
 
 
@@ -118,7 +129,7 @@
 }
 
 init: 
-@1 (and (sx=0) (sy=0) (v=7.5) (sx_d=0) (sy_d=0) (Psi=0) (Psi_dot=0) (Beta=0) (delta=0) (tau=0) (Psi_d=0) (Beta_dot=0) (Psi_ddot=0) (v_dot=0) (sx_dot=0) (sy_dot=0) (delta_dot=0));
+@1 (and (sx=0) (sy=0) (v=7.5) (sx_d=0) (sy_d=0) (Psi=0) (Psi_dot=0) (Beta=0) (delta=0) (tau=0) (Psi_d=0) (Beta_dot=0) (Psi_ddot=0) (v_dot=0) (sx_dot=0) (sy_dot=0) (delta_dot=0) (v_env=7.5) (a_env>=-2) );
 
 goal:
 @1 (and (sx > 1) (tau>1));

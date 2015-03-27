@@ -1,0 +1,46 @@
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::compute_backward: exception: High Order Enclosure Error: minimal time step reached. Cannot integrate.
+the set: {[-5, 5],[-5, 5],[-1, 1],[-5, 5],[-5, 5],[-0.149999, 0.15],[-5, 5],[0, 20],[6.60797, 19.1082],[-5, 5],[0, 20],[-5, 5],[0.881094, 2.54779],[1.01064, 10],[-5, 5.64456]}
+current time: [0, 9.53675e-07]
+time step: [9.53675e-07, 9.53675e-07]
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::compute_backward: exception: High Order Enclosure Error: minimal time step reached. Cannot integrate.
+the set: {[-5, 5],[-5, 5],[-1, 1],[-5, 5],[-5, 5],[-0.149999, 0.15],[-5, 5],[0, 20],[6.60797, 19.1082],[-5, 5],[0, 20],[-5, 5],[0.881093, 2.54778],[1.01064, 10],[-5, 5.64459]}
+current time: [0, 9.53675e-07]
+time step: [9.53675e-07, 9.53675e-07]
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::compute_backward: exception: High Order Enclosure Error: minimal time step reached. Cannot integrate.
+the set: {[-5, 5],[-5, 5],[-1, 1],[-5, 5],[-5, 5],[-0.149999, 0.15],[-5, 5],[0, 20],[6.60774, 19.108],[-5, 5],[0, 20],[-5, 5],[0.881063, 2.54775],[1.01064, 10],[-5, 5.64663]}
+current time: [0, 9.53675e-07]
+time step: [9.53675e-07, 9.53675e-07]
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::compute_backward: exception: High Order Enclosure Error: minimal time step reached. Cannot integrate.
+the set: {[-5, 5],[-5, 5],[-1, 1],[-5, 5],[-5, 5],[-0.149999, 0.15],[-5, 5],[0, 20],[6.4451, 12.6953],[-5, 5],[0, 20],[-5, 5],[0.859377, 1.69271],[1.01013, 10],[-5, 7.25863]}
+current time: [0, 9.53675e-07]
+time step: [9.53675e-07, 9.53675e-07]
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_backward: Exception in Simple_ODE: 

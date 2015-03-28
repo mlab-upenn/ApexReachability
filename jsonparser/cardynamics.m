@@ -29,7 +29,8 @@ ax = k5*(cos(Psid)*(sxd - sx) + sin(Psid)*(syd - sy))...
     +k6*(vd-v);
 
 A = Cr*lr-Cf*lf;
-dPsid = (6*t*sqrt(1/(9*t^4+1)/(sqrt(9*t^4+1))));
+temp1 = 9*t^4+1;
+dPsid = -6*t*sqrt(1/temp1)/(sqrt(temp1));
 dbeta = ((A)/m*v^2-1)*psidot + Cf*delta/(m*v^2) - (Cf+Cr)*beta/(m*v);
 dpsi = psidot;
 dpsidot = -A*beta/Iz - ((lf^2*Cf+lr^2*Cr)/Iz)*(psidot/v) + (lf*Cf)*delta/Iz;

@@ -31,12 +31,12 @@ for k=1:nkeys
         
         if w==0
             hv = it(1):h/N:it(1);
-            plot(ts(1)*ones(1,length(hv)), hv)
+            plot(ts(1)*ones(1,length(hv)), hv,'r')
             hold on
             
         elseif h==0
             wv = ts(1):w/N:ts(2);
-            plot(wv, it(1)*ones(1,length(wv)))
+            plot(wv, it(1)*ones(1,length(wv)),'r')
             hold on
             
         else

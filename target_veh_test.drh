@@ -1,0 +1,129 @@
+/* Symbols */
+/* Plant State Variables */
+// Beta is the slip angle at the center of mass
+// Psi_dot is the yaw rate
+// Psi is the heading angle
+// v is the velocity
+// sx is the x position
+// sy is the y position
+// delta is the angle of the front wheel
+
+/* Controller variables */
+// Psi_d is the requested heading angle
+// Psi_dot_d is the requested yaw rate
+// sx_d is the requested x position
+// sy_d is the requested y position
+
+/* System inputs from tracking controller */
+// ax is an input to the system and is the longitudinal acceleration
+// vw is an input to the system and is speed rotational speed of the steering angle
+
+// Constants
+#define m 2273
+#define Iz 4423
+#define Cf 108000
+#define Cr 108000
+#define lf 1.292
+#define lr 1.515
+#define k1 2
+#define k2 12
+#define k3 4
+#define k4 2
+#define k5 1
+#define k6 10
+#define v_d 7.5
+
+// Tracking controller inputs
+// Rate of change of front wheel angle
+#define vw k1*((cos(Psi_d)*(sy_d-sy))-(sin(Psi_d)*(sx_d-sx)))+k2*(Psi_d-Psi)+k3*((v*sin(v)/sqrt(v^2-(cos(v))^2))-Psi_dot)-k4*(delta)
+// Longitudinal acceleration
+#define ax k5*(cos(Psi_d)*(sx_d-sx)+sin(Psi_d)*(sy_d-sy))+k6*(v_d-v)
+
+// Bounds on variables
+[0,10] sx;
+[0,10] sy;
+[-1,1] Psi;
+[-5,5] Psi_dot;
+[-5,5] Beta;
+[-0.15, 0.15] delta;
+[0,10] v;
+[0,4] tau;
+[0, 4] time;
+[-5,5] Psi_d;
+[0,10] sx_d;
+[0,10] sy_d;
+// Extra variables 
+[-5,5] Beta_dot;
+[-5,5] Psi_ddot;
+[-5,10] v_dot;
+[-5,5] sx_dot;
+[-5,5] sy_dot;
+[-5,5] delta_dot;
+
+// Dynamics
+{
+    // Lane change motion primitive
+    mode 1;
+
+    invt:
+    // X position must be greater than or equal to 0
+    (sx>=0);
+    // Velocity must be greater than or equal to 0
+    (v>=0);
+
+    flow:
+    /* TARGET VEHICLE */
+    /* Plant equations */
+    // Time
+    d/dt[tau]=1;
+
+    // Compute rate of change of the slip angle
+    d/dt[Beta]=((((Cr*lr-Cf*lf)/(m*v*v))-1)*(Psi_dot))+((Cf*delta)/(m*v))-(((Cf+Cr)/(m*v))*Beta);
+    // Rate of change of yaw rate
+    d/dt[Psi_dot]=(((Cr*lr-Cf*lf)/Iz)*Beta)-((((Cf*lf*lf)+(Cr*lr*lr))/Iz)*(Psi_dot/v))+((Cf*lf/Iz)*delta);
+    // Rate of change of the heading angle is equal to yaw rate
+    d/dt[Psi]=Psi_dot;
+    // Longitudinal acceleration
+    d/dt[v]=ax;
+    // X component of velocity
+    d/dt[sx]=v*cos(Beta+Psi);
+    // Y component of velocity
+    d/dt[sy]=v*sin(Beta+Psi);
+    // Rate of change of front wheel angle.
+    d/dt[delta]=vw;
+
+    /* Controller Equations*/
+    // Requested x component of velocity
+    d/dt[sx_d]=v_d;
+    // Requested y component of velocity
+    //d/dt[sy_d]=v*cos(v*tau);
+    d/dt[sy_d]=0;
+    // Requested rate of change of yaw rate
+    //d/dt[Psi_d]= v*sin(v*tau)/sqrt(v^2-(cos(v*tau))^2);
+    d/dt[Psi_d]=0;
+
+    /* Derivatives */
+    d/dt[Beta_dot]=((Cr*lr-Cf*lf)/m)*(v*Psi_ddot-2*Psi*v_dot)+(Cf/m)*(v*delta_dot-delta*v_dot)-((Cf+Cr)/m)*(v*Beta_dot+Beta*v_dot);
+    d/dt[Psi_ddot]=((Cr*lr-Cf*lf)/Iz)*(Beta_dot)-((Cf*lf*lf-Cr*lr*lr)/Iz)*(v*Psi_ddot-Psi_dot*v_dot)+(Cf*lf/Iz)*(delta_dot);
+    d/dt[v_dot]=k1*(-sy_dot)+k6*(-v_dot);
+    d/dt[sx_dot]=v_dot*(cos(Beta+Psi))-v*(Beta_dot+Psi_dot)+v_dot*sin(Beta+Psi);
+    d/dt[sy_dot]=v*(Beta_dot+Psi_dot)*cos(Beta+Psi)+v_dot*sin(Beta+Psi);
+    d/dt[delta_dot]=-k1*(sy_dot)-k2*(Psi_dot)-k3*(Psi_ddot)-k4*(delta_dot);
+   
+   /* Second Vehicle */
+
+
+
+    jump:
+}
+
+init: 
+@1 (and (sx=0) (sy=0) (v=0) (sx_d=0) (sy_d=0) (Psi=0) (Psi_dot=0) (Beta=0) (delta=0) (tau=0) (Psi_d=0) (Beta_dot=0) (Psi_ddot=0) (v_dot=0) (sx_dot=0) (sy_dot=0) (delta_dot=0));
+
+goal:
+@1 (and (sx > 1) (tau>1));
+
+
+
+
+

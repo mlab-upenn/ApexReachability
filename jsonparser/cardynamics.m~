@@ -30,14 +30,14 @@ ax = k5*(cos(Psid)*(sxd - sx) + sin(Psid)*(syd - sy))...
 
 A = Cr*lr-Cf*lf;
 temp1 = 9*t^4+1;
-dPsid = (6*t*sqrt(1/temp1)/(sqrt(temp1)));
+dPsid = -6*t*sqrt(1/temp1)/(sqrt(temp1));
 dbeta = ((A)/m*v^2-1)*psidot + Cf*delta/(m*v^2) - (Cf+Cr)*beta/(m*v);
 dpsi = psidot;
 dpsidot = -A*beta/Iz - ((lf^2*Cf+lr^2*Cr)/Iz)*(psidot/v) + (lf*Cf)*delta/Iz;
 dv = ax;
 dsx = v*cos(beta+psi);
 dsy = v*sin(beta+psi);
-dsxd = vd*3*t^2;
+dsxd = 3*(;
 dsyd = -vd;
 
 vw = k1*(cos(Psid)*(syd - sy) - sin(Psid)*(sxd - sx)) ...

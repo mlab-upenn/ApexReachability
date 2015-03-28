@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'><nta><declaration>// Place global declarations here.
+</declaration><template><name x="5" y="5">Template</name><declaration>// Place local declarations here.
+</declaration><location id="id0" x="456" y="-16"><name x="440" y="-48">Finish</name></location><location id="id1" x="464" y="64"><name x="424" y="80">Lane Change</name></location><location id="id2" x="184" y="64"><name x="136" y="168">Drive Straight</name></location><location id="id3" x="184" y="-24"><name x="160" y="-56">Initialize</name><urgent/></location><init ref="id3"/><transition><source ref="id2"/><target ref="id2"/><nail x="200" y="120"/><nail x="160" y="120"/></transition><transition><source ref="id2"/><target ref="id1"/><label kind="guard" x="248" y="64">Car.v &gt; Env.v,
+Car.x&gt; Env.x-follow</label></transition><transition><source ref="id2"/><target ref="id0"/><label kind="guard" x="248" y="-16">Car.x&gt;=Road.length</label></transition><transition><source ref="id2"/><target ref="id2"/><label kind="select" x="-144" y="72">v_bound: [v_lower, v_upper]
+a_bound: [a_lower, a_upper]</label><label kind="guard" x="-152" y="40">clock&gt;alpha</label><label kind="assignment" x="-152" y="56">Car.x+=</label><nail x="120" y="32"/><nail x="120" y="72"/></transition><transition><source ref="id3"/><target ref="id2"/><label kind="select" x="88" y="-8">Car.v: int[7,8]</label></transition></template><system>// Place template instantiations here.
+Process = Template();
+
+// List one or more processes to be composed into a system.
+system Process;</system></nta>

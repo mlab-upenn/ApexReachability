@@ -1,0 +1,118 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[0,10] sx;
+[0,10] sy;
+[-1,1] Psi;
+[-5,5] Psi_dot;
+[-5,5] Beta;
+[-0.15, 0.15] delta;
+[0,10] v;
+[0,4] tau;
+[0, 4] time;
+[-5,5] Psi_d;
+[0,10] sx_d;
+[0,10] sy_d;
+
+[-5,5] Beta_dot;
+[-5,5] Psi_ddot;
+[-5,10] v_dot;
+[-5,5] sx_dot;
+[-5,5] sy_dot;
+[-5,5] delta_dot;
+
+
+{
+    
+    mode 1;
+
+    invt:
+    
+    (sx>=0);
+    
+    (v>=0);
+
+    flow:
+    
+    
+    
+    d/dt[tau]=1;
+
+    
+    d/dt[Beta]=((((108000*1.515 -108000*1.292)/(2273*v*v))-1)*(Psi_dot))+((108000*delta)/(2273*v))-(((108000 +108000)/(2273*v))*Beta);
+    
+    d/dt[Psi_dot]=(((108000*1.515 -108000*1.292)/4423)*Beta)-((((108000*1.292*1.292)+(108000*1.515*1.515))/4423)*(Psi_dot/v))+((108000*1.292/4423)*delta);
+    
+    d/dt[Psi]=Psi_dot;
+    
+    d/dt[v]=1*(cos(Psi_d)*(sx_d-sx)+sin(Psi_d)*(sy_d-sy))+10*(7.5 -v);
+    
+    d/dt[sx]=v*cos(Beta+Psi);
+    
+    d/dt[sy]=v*sin(Beta+Psi);
+    
+    d/dt[delta]=2*((cos(Psi_d)*(sy_d-sy))-(sin(Psi_d)*(sx_d-sx)))+12*(Psi_d-Psi)+4*((v*sin(v)/sqrt(v^2-(cos(v))^2))-Psi_dot)-2*(delta);
+
+    
+    
+    d/dt[sx_d]=7.5;
+    
+    
+    d/dt[sy_d]=0;
+    
+    
+    d/dt[Psi_d]=0;
+
+    
+    d/dt[Beta_dot]=((108000*1.515 -108000*1.292)/2273)*(v*Psi_ddot-2*Psi*v_dot)+(108000/2273)*(v*delta_dot-delta*v_dot)-((108000 +108000)/2273)*(v*Beta_dot+Beta*v_dot);
+    d/dt[Psi_ddot]=((108000*1.515 -108000*1.292)/4423)*(Beta_dot)-((108000*1.292*1.292 -108000*1.515*1.515)/4423)*(v*Psi_ddot-Psi_dot*v_dot)+(108000*1.292/4423)*(delta_dot);
+    d/dt[v_dot]=2*(-sy_dot)+10*(-v_dot);
+    d/dt[sx_dot]=v_dot*(cos(Beta+Psi))-v*(Beta_dot+Psi_dot)+v_dot*sin(Beta+Psi);
+    d/dt[sy_dot]=v*(Beta_dot+Psi_dot)*cos(Beta+Psi)+v_dot*sin(Beta+Psi);
+    d/dt[delta_dot]=-2*(sy_dot)-12*(Psi_dot)-4*(Psi_ddot)-2*(delta_dot);
+   
+   
+
+
+
+    jump:
+}
+
+init: 
+@1 (and (sx=0) (sy=0) (v=0) (sx_d=0) (sy_d=0) (Psi=0) (Psi_dot=0) (Beta=0) (delta=0) (tau=0) (Psi_d=0) (Beta_dot=0) (Psi_ddot=0) (v_dot=0) (sx_dot=0) (sy_dot=0) (delta_dot=0));
+
+goal:
+@1 (and (sx > 1) (tau>1));
+
+
+
+
+
+

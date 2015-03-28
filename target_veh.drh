@@ -72,15 +72,15 @@
     //(v>=0);
 
     flow:
-    /* TARGET VEHICLE */
+        /* TARGET VEHICLE */
     /* Plant equations */
     // Time
     d/dt[tau]=1;
 
     // Compute rate of change of the slip angle
-    d/dt[Beta]=((((Cr*lr-Cf*lf)/(m*v*v))-1)*(Psi_dot))+((Cf*delta)/(m*v))-(((Cf+Cr)/m*v)*Beta);
+    d/dt[Beta]=((((Cr*lr-Cf*lf)/(m*v*v))-1)*(Psi_dot))+((Cf*delta)/(m*v))-(((Cf+Cr)/(m*v))*Beta);
     // Rate of change of yaw rate
-    d/dt[Psi_dot]=(((Cr*lr-Cf*lf)/Iz)*Beta)-((((Cf*lf*lf)-(Cr*lr*lr))/Iz)*(Psi_dot/v))+((Cf*lf/Iz)*delta);
+    d/dt[Psi_dot]=(((Cr*lr-Cf*lf)/Iz)*Beta)-((((Cf*lf*lf)+(Cr*lr*lr))/Iz)*(Psi_dot/v))+((Cf*lf/Iz)*delta);
     // Rate of change of the heading angle is equal to yaw rate
     d/dt[Psi]=Psi_dot;
     // Longitudinal acceleration
@@ -102,13 +102,14 @@
     //d/dt[Psi_d]= v*sin(v*tau)/sqrt(v^2-(cos(v*tau))^2);
     d/dt[Psi_d]=0;
 
-    /* Derivatives */
+    /* Derivatives 
     d/dt[Beta_dot]=((Cr*lr-Cf*lf)/m)*(v*Psi_ddot-2*Psi*v_dot)+(Cf/m)*(v*delta_dot-delta*v_dot)-((Cf+Cr)/m)*(v*Beta_dot+Beta*v_dot);
     d/dt[Psi_ddot]=((Cr*lr-Cf*lf)/Iz)*(Beta_dot)-((Cf*lf*lf-Cr*lr*lr)/Iz)*(v*Psi_ddot-Psi_dot*v_dot)+(Cf*lf/Iz)*(delta_dot);
     d/dt[v_dot]=k1*(-sy_dot)+k6*(-v_dot);
     d/dt[sx_dot]=v_dot*(cos(Beta+Psi))-v*(Beta_dot+Psi_dot)+v_dot*sin(Beta+Psi);
     d/dt[sy_dot]=v*(Beta_dot+Psi_dot)*cos(Beta+Psi)+v_dot*sin(Beta+Psi);
     d/dt[delta_dot]=-k1*(sy_dot)-k2*(Psi_dot)-k3*(Psi_ddot)-k4*(delta_dot);
+    */
    
    /* Second Vehicle */
 

@@ -40,8 +40,8 @@
 #define ax k5*(cos(Psi_d)*(sx_d-sx)+sin(Psi_d)*(sy_d-sy))+k6*(v_d-v)
 
 // Bounds on variables
-[0,20] sx;
-[0,20] sy;
+[0,10] sx;
+[0,10] sy;
 [-1,1] Psi;
 [-5,5] Psi_dot;
 [-5,5] Beta;
@@ -67,9 +67,9 @@
 
     invt:
     // X position must be greater than or equal to 0
-    //(sx>=0);
+    (sx>=0);
     // Velocity must be greater than or equal to 0
-    //(v>=0);
+    (v>=0);
 
     flow:
     /* TARGET VEHICLE */
@@ -78,9 +78,9 @@
     d/dt[tau]=1;
 
     // Compute rate of change of the slip angle
-    d/dt[Beta]=((((Cr*lr-Cf*lf)/(m*v*v))-1)*(Psi_dot))+((Cf*delta)/(m*v))-(((Cf+Cr)/m*v)*Beta);
+    d/dt[Beta]=((((Cr*lr-Cf*lf)/(m*v*v))-1)*(Psi_dot))+((Cf*delta)/(m*v))-(((Cf+Cr)/(m*v))*Beta);
     // Rate of change of yaw rate
-    d/dt[Psi_dot]=(((Cr*lr-Cf*lf)/Iz)*Beta)-((((Cf*lf*lf)-(Cr*lr*lr))/Iz)*(Psi_dot/v))+((Cf*lf/Iz)*delta);
+    d/dt[Psi_dot]=(((Cr*lr-Cf*lf)/Iz)*Beta)-((((Cf*lf*lf)+(Cr*lr*lr))/Iz)*(Psi_dot/v))+((Cf*lf/Iz)*delta);
     // Rate of change of the heading angle is equal to yaw rate
     d/dt[Psi]=Psi_dot;
     // Longitudinal acceleration
@@ -118,7 +118,7 @@
 }
 
 init: 
-@1 (and (sx=0) (sy=0) (v=7.5) (sx_d=0) (sy_d=0) (Psi=0) (Psi_dot=0) (Beta=0) (delta=0) (tau=0) (Psi_d=0) (Beta_dot=0) (Psi_ddot=0) (v_dot=0) (sx_dot=0) (sy_dot=0) (delta_dot=0));
+@1 (and (sx=0) (sy=0) (v=0) (sx_d=0) (sy_d=0) (Psi=0) (Psi_dot=0) (Beta=0) (delta=0) (tau=0) (Psi_d=0) (Beta_dot=0) (Psi_ddot=0) (v_dot=0) (sx_dot=0) (sy_dot=0) (delta_dot=0));
 
 goal:
 @1 (and (sx > 1) (tau>1));

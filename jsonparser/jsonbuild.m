@@ -3,8 +3,13 @@ function outname = jsonbuild(jsonfile)
 fid = fopen([jsonfile,'.json']);
 tline = fgetl(fid);
 nkeys = 0;
+nlines = 0;
 while ischar(tline)
     %fprintf('%s\n',tline)
+    nlines = nlines+1;
+    if mod(nlines,2000)==0
+        disp(num2str(nlines))
+    end
     key = regexp(tline, 'key": "(?<signalName>\w+)"', 'names');
     tokens = regexp(tline, '"time":\s+(?<timestep>\[.*\]),\s+"enclosure":\s+(?<interval>\[.*\])', 'names');
     if ~isempty(key)

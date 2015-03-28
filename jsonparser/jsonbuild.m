@@ -20,10 +20,6 @@ while ischar(tline)
         signal(nkeys).timesteps = [];
         signal(nkeys).intervals = [];
     elseif ~isempty(tokens)
-        if i2 > 14
-            continue
-        end
-
         %"time": [0, 0], "enclosure": [0, 0]},
         i2=i2+1;
         signal(nkeys).timesteps{i2} = str2num(tokens.timestep);

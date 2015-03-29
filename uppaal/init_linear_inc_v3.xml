@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'><nta><declaration>// Place global declarations here.
+
+/* CLOCKS*/
+// Clock for position
+clock Sx;
+// Clock for velocity
+clock Sv;
+// Clock for time
+clock t;
+
+/* CONSTANTS*/
+// Upper bound on velocity from dReach
+const int v_upper=3;
+// Upper bound on acceleration from dReach
+const int a_upper=1;
+// Jump for overapproximation of position.
+const int epsilon=2;
+// Road length
+const int Road_length=70;
+// Safe following distance
+const int follow=5;
+// Initial time at which a jump is necessary
+const int t1=epsilon/(v_upper-1);
+// Initial jump in position.
+const int it1=epsilon+v_upper*t1;
+// Speed limit
+const int speed_limit=10;
+const int v_d=8;
+
+/* STATE VARIABLES */
+// The target vehicles position
+int Car_x; 
+// The target vehicles velocity
+int Car_v;
+
+// The environmental vehicles velocity
+int Env_v;
+// The environmental vehicles position
+int Env_x;
+
+// Counter to keep track of how many jumps have occured
+int k;
+
+/* LOOKUP TABLES FOR TIME*/
+// Array of times at which position jumps should occur, indexed by k
+int tarray[21]={0, 0, 2, 3, 5, 8, 12, 18, 28, 42, 64, 96, 144, 216, 324, 486, 729, 1094, 1642, 2463, 3694};
+// Array of times at which velocity jumps should occur, indexed by
+//int varray[21]={0, 0, };
+
+/* GUARD CONDITION VARIABLES AND JUMPS*/
+// Selection of proper time for position jump based on index k
+int tk;
+// Value of position jump
+int itk;
+
+/* CONVENIENCE VARIABLES*/
+// Temporary integer value for storing the current value of the time for position jump
+int time_temp;
+
+// Extra variable for viewing vehicle state on counter examples
+int position_temp;
+
+/* SELECTION AND COMPUTATION*/
+// Function to select jump time for position
+int timeGuard() 
+{
+	tk=tarray[k];	
+	return tk;
+}
+
+// Function to compute jump size for position
+int positionJump()
+{	
+	itk = epsilon+v_upper*tk;
+	return itk;
+}
+
+/*
+int velocityGuard()
+{
+	vk=varray[k];
+	return vk;
+}
+
+// Function to select jump size for velocity
+int velocityJump()
+{
+	return vtk;
+}*/</declaration><template><name x="5" y="5">Scenario</name><declaration>// Place local declarations here.
+
+</declaration><location id="id0" x="184" y="-80"><label kind="invariant" x="200" y="-88">t&lt;=t1 &amp;&amp; k&lt;=2</label></location><location id="id1" x="408" y="8"><name x="392" y="-24">Finish</name></location><location id="id2" x="408" y="64"><name x="368" y="80">LaneChange</name></location><location id="id3" x="184" y="64"><name x="200" y="72">DriveStraight</name><label kind="invariant" x="200" y="88">t&lt;=time_temp 
+&amp;&amp; k&lt;20</label></location><location id="id4" x="184" y="-168"><name x="160" y="-200">Initialize</name><urgent/></location><init ref="id4"/><transition><source ref="id0"/><target ref="id3"/><label kind="guard" x="192" y="-56">k==2</label><label kind="assignment" x="192" y="-40">time_temp=timeGuard()</label></transition><transition><source ref="id4"/><target ref="id0"/><label kind="select" x="216" y="-168">env_init: int[30,70]</label><label kind="assignment" x="216" y="-152">Sx=epsilon,
+t=0,
+k=1,
+Env_x=env_init</label></transition><transition><source ref="id0"/><target ref="id0"/><label kind="guard" x="104" y="-112">t==t1</label><label kind="assignment" x="104" y="-64">k=k+1,
+Sx=it1</label><nail x="88" y="-96"/><nail x="88" y="-64"/><nail x="168" y="-72"/></transition><transition><source ref="id3"/><target ref="id3"/><label kind="guard" x="24" y="32">t==time_temp</label><label kind="assignment" x="24" y="72">k=k+1,
+Sx = positionJump(),
+time_temp=timeGuard()</label><nail x="88" y="48"/><nail x="88" y="88"/></transition><transition><source ref="id3"/><target ref="id2"/><label kind="guard" x="248" y="48">Sx&gt; Env_x-follow</label></transition><transition><source ref="id3"/><target ref="id1"/><label kind="guard" x="248" y="0">Sx&gt;=Road_length</label></transition></template><template><name>Controller</name><location id="id5" x="-24" y="48"><name x="-128" y="24">UpdateSpeed</name><urgent/></location><location id="id6" x="-24" y="-48"><name x="-8" y="-72">Driving</name></location><location id="id7" x="-24" y="-152"><name x="-8" y="-160">Initial</name><urgent/></location><init ref="id7"/><transition><source ref="id6"/><target ref="id5"/><label kind="guard" x="-8" y="-40">Sv&gt;speed_limit-1</label><nail x="0" y="-8"/></transition><transition><source ref="id6"/><target ref="id5"/><label kind="guard" x="-88" y="-40">Sv&lt;v_d</label><nail x="-48" y="-8"/></transition><transition><source ref="id5"/><target ref="id6"/><label kind="guard" x="16" y="48">Sv&gt;=speed_limit</label><label kind="assignment" x="16" y="64">Sv=speed_limit</label><nail x="120" y="48"/><nail x="120" y="-48"/></transition><transition><source ref="id5"/><target ref="id6"/><label kind="guard" x="-128" y="48">Sv&lt;=v_d</label><label kind="assignment" x="-128" y="64">Sv=v_d</label><nail x="-152" y="48"/><nail x="-152" y="-48"/></transition><transition><source ref="id7"/><target ref="id6"/></transition></template><system>// Place template instantiations here.
+scenario = Scenario();
+controller = Controller();
+
+// List one or more processes to be composed into a system.
+system scenario, controller;</system></nta>

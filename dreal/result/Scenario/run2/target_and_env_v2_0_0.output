@@ -1,0 +1,345 @@
+nra_solver::check(incomplete)
+icp_solver::create_rp_problem: variables
+	Psi_d_0_t : Real = [-5, 5]
+	Beta_0_t : Real = [-5, 5]
+	sx_d_0_t : Real = [-20, 20]
+	time_0 : Real = [0, 4]
+	delta_0_0 : Real = [-1, 1]
+	delta_0_t : Real = [-1, 1]
+	sx_env_0_t : Real = [-20, 20]
+	Psi_d_0_0 : Real = [-5, 5]
+	sy_d_0_t : Real = [-20, 20]
+	tau_0_t : Real = [0, 21]
+	v_0_t : Real = [0, 10]
+	mode_0 : Real = [1, 1]
+	sx_env_0_0 : Real = [-20, 20]
+	sx_0_0 : Real = [-20, 20]
+	sy_0_0 : Real = [-20, 20]
+	Psi_0_0 : Real = [-1, 1]
+	sy_0_t : Real = [-20, 20]
+	tau_0_0 : Real = [0, 21]
+	sy_d_0_0 : Real = [-20, 20]
+	v_0_0 : Real = [0, 10]
+	v_env_0_t : Real = [0, 10]
+	sx_d_0_0 : Real = [-20, 20]
+	Psi_dot_0_t : Real = [-5, 5]
+	Beta_0_0 : Real = [-5, 5]
+	sx_0_t : Real = [-20, 20]
+	Psi_0_t : Real = [-1, 1]
+	v_env_0_0 : Real = [0, 10]
+	Psi_dot_0_0 : Real = [-5, 5]
+icp_solver::create_rp_problem: constraints
+icp_solver::create_rp_problem: constraint:  (= 0 sx_env_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 v_env_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 Psi_d_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 tau_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 delta_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 Beta_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 Psi_dot_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 Psi_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 sy_d_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 sx_d_0_0)
+icp_solver::create_rp_problem: constraint:  (= v_0_0 7)
+icp_solver::create_rp_problem: constraint:  (= 0 sy_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 sx_0_0)
+icp_solver::create_rp_problem: constraint:  (= 1 mode_0)
+icp_solver::create_rp_problem: constraint: Not (<= tau_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= mode_0 1)
+icp_solver::create_rp_problem: constraint:  (<= 1 mode_0)
+icp_solver::create_rp_problem: constraint:  (<= time_0 4)
+icp_solver::create_rp_problem: constraint:  (<= 0 time_0)
+icp_solver::create_rp_problem: constraint:  (<= Beta_0_t 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Beta_0_t)
+icp_solver::create_rp_problem: constraint:  (<= Beta_0_0 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Beta_0_0)
+icp_solver::create_rp_problem: constraint:  (<= Psi_0_t 1)
+icp_solver::create_rp_problem: constraint:  (<= -1 Psi_0_t)
+icp_solver::create_rp_problem: constraint:  (<= Psi_0_0 1)
+icp_solver::create_rp_problem: constraint:  (<= -1 Psi_0_0)
+icp_solver::create_rp_problem: constraint:  (<= Psi_d_0_t 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Psi_d_0_t)
+icp_solver::create_rp_problem: constraint:  (<= Psi_d_0_0 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Psi_d_0_0)
+icp_solver::create_rp_problem: constraint:  (<= Psi_dot_0_t 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Psi_dot_0_t)
+icp_solver::create_rp_problem: constraint:  (<= Psi_dot_0_0 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Psi_dot_0_0)
+icp_solver::create_rp_problem: constraint:  (<= delta_0_t 1)
+icp_solver::create_rp_problem: constraint:  (<= -1 delta_0_t)
+icp_solver::create_rp_problem: constraint:  (<= delta_0_0 1)
+icp_solver::create_rp_problem: constraint:  (<= -1 delta_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sx_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sx_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sx_d_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_d_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sx_d_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_d_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sx_env_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_env_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sx_env_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_env_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sy_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sy_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sy_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sy_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sy_d_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sy_d_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sy_d_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sy_d_0_0)
+icp_solver::create_rp_problem: constraint:  (<= tau_0_t 21)
+icp_solver::create_rp_problem: constraint:  (<= 0 tau_0_t)
+icp_solver::create_rp_problem: constraint:  (<= tau_0_0 21)
+icp_solver::create_rp_problem: constraint:  (<= 0 tau_0_0)
+icp_solver::create_rp_problem: constraint:  (<= v_0_t 10)
+icp_solver::create_rp_problem: constraint:  (<= 0 v_0_t)
+icp_solver::create_rp_problem: constraint:  (<= v_0_0 10)
+icp_solver::create_rp_problem: constraint:  (<= 0 v_0_0)
+icp_solver::create_rp_problem: constraint:  (<= v_env_0_t 10)
+icp_solver::create_rp_problem: constraint:  (<= 0 v_env_0_t)
+icp_solver::create_rp_problem: constraint:  (<= v_env_0_0 10)
+icp_solver::create_rp_problem: constraint:  (<= 0 v_env_0_0)
+nra_solver::check(incomplete) result = true
+============================
+nra_solver::check(complete)
+icp_solver::create_rp_problem: variables
+	Psi_d_0_t : Real = [-5, 5]
+	Beta_0_t : Real = [-5, 5]
+	sx_d_0_t : Real = [-20, 20]
+	time_0 : Real = [0, 4]
+	delta_0_0 : Real = [0, 0]
+	delta_0_t : Real = [-1, 1]
+	sx_env_0_t : Real = [-20, 20]
+	Psi_d_0_0 : Real = [0, 0]
+	sy_d_0_t : Real = [-20, 20]
+	tau_0_t : Real = [20, 21]
+	v_0_t : Real = [0, 10]
+	mode_0 : Real = [1, 1]
+	sx_env_0_0 : Real = [0, 0]
+	sx_0_0 : Real = [0, 0]
+	sy_0_0 : Real = [0, 0]
+	Psi_0_0 : Real = [0, 0]
+	sy_0_t : Real = [-20, 20]
+	tau_0_0 : Real = [0, 0]
+	sy_d_0_0 : Real = [0, 0]
+	v_0_0 : Real = [7, 7]
+	v_env_0_t : Real = [0, 10]
+	sx_d_0_0 : Real = [0, 0]
+	Psi_dot_0_t : Real = [-5, 5]
+	Beta_0_0 : Real = [0, 0]
+	sx_0_t : Real = [-20, 20]
+	Psi_0_t : Real = [-1, 1]
+	v_env_0_0 : Real = [0, 0]
+	Psi_dot_0_0 : Real = [0, 0]
+icp_solver::create_rp_problem: constraints
+icp_solver::create_rp_problem: constraint:  (= 0 sx_env_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 v_env_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 Psi_d_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 tau_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 delta_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 Beta_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 Psi_dot_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 Psi_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 sy_d_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 sx_d_0_0)
+icp_solver::create_rp_problem: constraint:  (= v_0_0 7)
+icp_solver::create_rp_problem: constraint:  (= 0 sy_0_0)
+icp_solver::create_rp_problem: constraint:  (= 0 sx_0_0)
+icp_solver::create_rp_problem: constraint:  (= 1 mode_0)
+icp_solver::create_rp_problem: constraint: Not (<= tau_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= mode_0 1)
+icp_solver::create_rp_problem: constraint:  (<= 1 mode_0)
+icp_solver::create_rp_problem: constraint:  (<= time_0 4)
+icp_solver::create_rp_problem: constraint:  (<= 0 time_0)
+icp_solver::create_rp_problem: constraint:  (<= Beta_0_t 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Beta_0_t)
+icp_solver::create_rp_problem: constraint:  (<= Beta_0_0 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Beta_0_0)
+icp_solver::create_rp_problem: constraint:  (<= Psi_0_t 1)
+icp_solver::create_rp_problem: constraint:  (<= -1 Psi_0_t)
+icp_solver::create_rp_problem: constraint:  (<= Psi_0_0 1)
+icp_solver::create_rp_problem: constraint:  (<= -1 Psi_0_0)
+icp_solver::create_rp_problem: constraint:  (<= Psi_d_0_t 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Psi_d_0_t)
+icp_solver::create_rp_problem: constraint:  (<= Psi_d_0_0 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Psi_d_0_0)
+icp_solver::create_rp_problem: constraint:  (<= Psi_dot_0_t 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Psi_dot_0_t)
+icp_solver::create_rp_problem: constraint:  (<= Psi_dot_0_0 5)
+icp_solver::create_rp_problem: constraint:  (<= -5 Psi_dot_0_0)
+icp_solver::create_rp_problem: constraint:  (<= delta_0_t 1)
+icp_solver::create_rp_problem: constraint:  (<= -1 delta_0_t)
+icp_solver::create_rp_problem: constraint:  (<= delta_0_0 1)
+icp_solver::create_rp_problem: constraint:  (<= -1 delta_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sx_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sx_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sx_d_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_d_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sx_d_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_d_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sx_env_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_env_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sx_env_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sx_env_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sy_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sy_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sy_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sy_0_0)
+icp_solver::create_rp_problem: constraint:  (<= sy_d_0_t 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sy_d_0_t)
+icp_solver::create_rp_problem: constraint:  (<= sy_d_0_0 20)
+icp_solver::create_rp_problem: constraint:  (<= -20 sy_d_0_0)
+icp_solver::create_rp_problem: constraint:  (<= tau_0_t 21)
+icp_solver::create_rp_problem: constraint:  (<= 0 tau_0_t)
+icp_solver::create_rp_problem: constraint:  (<= tau_0_0 21)
+icp_solver::create_rp_problem: constraint:  (<= 0 tau_0_0)
+icp_solver::create_rp_problem: constraint:  (<= v_0_t 10)
+icp_solver::create_rp_problem: constraint:  (<= 0 v_0_t)
+icp_solver::create_rp_problem: constraint:  (<= v_0_0 10)
+icp_solver::create_rp_problem: constraint:  (<= 0 v_0_0)
+icp_solver::create_rp_problem: constraint:  (<= v_env_0_t 10)
+icp_solver::create_rp_problem: constraint:  (<= 0 v_env_0_t)
+icp_solver::create_rp_problem: constraint:  (<= v_env_0_0 10)
+icp_solver::create_rp_problem: constraint:  (<= 0 v_env_0_0)
+ode_solver::ode_solver: diff_par          : par:v_env_0_0;
+ode_solver::ode_solver: diff_var          : var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;
+ode_solver::ode_solver: diff_fun_forward  : fun:(((((163620+(-1*(139536/((2273*v_0_0)*v_0_0))))+-1)*Psi_dot_0_0)+((108000*delta_0_0)/(2273*v_0_0)))+(-1*((216000/(2273*v_0_0))*Beta_0_0))), Psi_dot_0_0, (((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5))))), (((163588.45218177707*Beta_0_0)+(-1*(96.804162785439757*(Psi_dot_0_0/v_0_0))))+(31.547818222925617*delta_0_0)), ((((2*((cos(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))+(-1*(sin(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0))))))+(12*(Psi_d_0_0+(-1*Psi_0_0))))+(4*((((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5)))))+(-1*Psi_dot_0_0))))+(-1*(2*delta_0_0))), (v_0_0*cos((Beta_0_0+Psi_0_0))), ((7.5*(3*((tau_0_0+-1.8500000000000001)^(2))))/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5))), v_env_0_0, (v_0_0*sin((Beta_0_0+Psi_0_0))), (7.5/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5))), 1, ((1*((cos(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0)))+(sin(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))))+(10*(7.5+(-1*v_0_0))));
+ode_solver::ode_solver: diff_fun_backward : fun:-(((((163620+(-1*(139536/((2273*v_0_0)*v_0_0))))+-1)*Psi_dot_0_0)+((108000*delta_0_0)/(2273*v_0_0)))+(-1*((216000/(2273*v_0_0))*Beta_0_0))), -Psi_dot_0_0, -(((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5))))), -(((163588.45218177707*Beta_0_0)+(-1*(96.804162785439757*(Psi_dot_0_0/v_0_0))))+(31.547818222925617*delta_0_0)), -((((2*((cos(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))+(-1*(sin(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0))))))+(12*(Psi_d_0_0+(-1*Psi_0_0))))+(4*((((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5)))))+(-1*Psi_dot_0_0))))+(-1*(2*delta_0_0))), -(v_0_0*cos((Beta_0_0+Psi_0_0))), -((7.5*(3*((tau_0_0+-1.8500000000000001)^(2))))/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5))), -v_env_0_0, -(v_0_0*sin((Beta_0_0+Psi_0_0))), -(7.5/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5))), -1, -((1*((cos(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0)))+(sin(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))))+(10*(7.5+(-1*v_0_0))));
+ode_solver::ode_solver: diff_sys_forward  : par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:(((((163620+(-1*(139536/((2273*v_0_0)*v_0_0))))+-1)*Psi_dot_0_0)+((108000*delta_0_0)/(2273*v_0_0)))+(-1*((216000/(2273*v_0_0))*Beta_0_0))), Psi_dot_0_0, (((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5))))), (((163588.45218177707*Beta_0_0)+(-1*(96.804162785439757*(Psi_dot_0_0/v_0_0))))+(31.547818222925617*delta_0_0)), ((((2*((cos(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))+(-1*(sin(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0))))))+(12*(Psi_d_0_0+(-1*Psi_0_0))))+(4*((((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5)))))+(-1*Psi_dot_0_0))))+(-1*(2*delta_0_0))), (v_0_0*cos((Beta_0_0+Psi_0_0))), ((7.5*(3*((tau_0_0+-1.8500000000000001)^(2))))/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5))), v_env_0_0, (v_0_0*sin((Beta_0_0+Psi_0_0))), (7.5/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5))), 1, ((1*((cos(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0)))+(sin(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))))+(10*(7.5+(-1*v_0_0))));
+ode_solver::ode_solver: diff_sys_backward : par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:-(((((163620+(-1*(139536/((2273*v_0_0)*v_0_0))))+-1)*Psi_dot_0_0)+((108000*delta_0_0)/(2273*v_0_0)))+(-1*((216000/(2273*v_0_0))*Beta_0_0))), -Psi_dot_0_0, -(((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5))))), -(((163588.45218177707*Beta_0_0)+(-1*(96.804162785439757*(Psi_dot_0_0/v_0_0))))+(31.547818222925617*delta_0_0)), -((((2*((cos(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))+(-1*(sin(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0))))))+(12*(Psi_d_0_0+(-1*Psi_0_0))))+(4*((((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5)))))+(-1*Psi_dot_0_0))))+(-1*(2*delta_0_0))), -(v_0_0*cos((Beta_0_0+Psi_0_0))), -((7.5*(3*((tau_0_0+-1.8500000000000001)^(2))))/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5))), -v_env_0_0, -(v_0_0*sin((Beta_0_0+Psi_0_0))), -(7.5/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5))), -1, -((1*((cos(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0)))+(sin(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))))+(10*(7.5+(-1*v_0_0))));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:(((((163620+(-1*(139536/((2273*v_0_0)*v_0_0))))+-1)*Psi_dot_0_0)+((108000*delta_0_0)/(2273*v_0_0)))+(-1*((216000/(2273*v_0_0))*Beta_0_0)));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:Psi_dot_0_0;
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:(((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5)))));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:(((163588.45218177707*Beta_0_0)+(-1*(96.804162785439757*(Psi_dot_0_0/v_0_0))))+(31.547818222925617*delta_0_0));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:((((2*((cos(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))+(-1*(sin(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0))))))+(12*(Psi_d_0_0+(-1*Psi_0_0))))+(4*((((-1*(54*((1.8500000000000001+(-1*tau_0_0))^(5))))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(1.5)))+(-1*(((6*(1.8500000000000001+(-1*tau_0_0)))/(((9*((1.8500000000000001+(-1*tau_0_0))^(4)))+1)^(0.5)))/((1+(-1*((9*((1.8500000000000001+(-1*tau_0_0))^(4)))/((16.650000000000002+(-1*(tau_0_0^(4))))+1))))^(0.5)))))+(-1*Psi_dot_0_0))))+(-1*(2*delta_0_0)));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:(v_0_0*cos((Beta_0_0+Psi_0_0)));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:((7.5*(3*((tau_0_0+-1.8500000000000001)^(2))))/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5)));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:v_env_0_0;
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:(v_0_0*sin((Beta_0_0+Psi_0_0)));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:(7.5/(((9*((tau_0_0+-1.8500000000000001)^(4)))+1)^(0.5)));
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:1;
+ode_solver::ode_solver: func = par:v_env_0_0;var:Beta_0_0, Psi_0_0, Psi_d_0_0, Psi_dot_0_0, delta_0_0, sx_0_0, sx_d_0_0, sx_env_0_0, sy_0_0, sy_d_0_0, tau_0_0, v_0_0;fun:((1*((cos(Psi_d_0_0)*(sx_d_0_0+(-1*sx_0_0)))+(sin(Psi_d_0_0)*(sy_d_0_0+(-1*sy_0_0)))))+(10*(7.5+(-1*v_0_0))));
+ode_solver::extract_invariant: Default Invariant set for Beta_0_t = [-5, 5]
+ode_solver::extract_invariant: Default Invariant set for Psi_0_t = [-1, 1]
+ode_solver::extract_invariant: Default Invariant set for Psi_d_0_t = [-5, 5]
+ode_solver::extract_invariant: Default Invariant set for Psi_dot_0_t = [-5, 5]
+ode_solver::extract_invariant: Default Invariant set for delta_0_t = [-1, 1]
+ode_solver::extract_invariant: Default Invariant set for sx_0_t = [-20, 20]
+ode_solver::extract_invariant: Default Invariant set for sx_d_0_t = [-20, 20]
+ode_solver::extract_invariant: Default Invariant set for sx_env_0_t = [-20, 20]
+ode_solver::extract_invariant: Default Invariant set for sy_0_t = [-20, 20]
+ode_solver::extract_invariant: Default Invariant set for sy_d_0_t = [-20, 20]
+ode_solver::extract_invariant: Default Invariant set for tau_0_t = [0, 21]
+ode_solver::extract_invariant: Default Invariant set for v_0_t = [0, 10]
+icp_solver::prop_with_ODE()
+icp_solver::prop_with_ODE: 1	0	29.0411	Forward
+ode_solver::varlist_to_IVector: The interval on Beta_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on Psi_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on Psi_d_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on Psi_dot_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on delta_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on sx_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on sx_d_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on sx_env_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on sy_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on sy_d_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on tau_0_0: [0, 0]
+ode_solver::varlist_to_IVector: The interval on v_0_0: [7, 7]
+ode_solver::varlist_to_IVector: The interval on Beta_0_t: [-5, 5]
+ode_solver::varlist_to_IVector: The interval on Psi_0_t: [-1, 1]
+ode_solver::varlist_to_IVector: The interval on Psi_d_0_t: [-5, 5]
+ode_solver::varlist_to_IVector: The interval on Psi_dot_0_t: [-5, 5]
+ode_solver::varlist_to_IVector: The interval on delta_0_t: [-1, 1]
+ode_solver::varlist_to_IVector: The interval on sx_0_t: [-20, 20]
+ode_solver::varlist_to_IVector: The interval on sx_d_0_t: [-20, 20]
+ode_solver::varlist_to_IVector: The interval on sx_env_0_t: [-20, 20]
+ode_solver::varlist_to_IVector: The interval on sy_0_t: [-20, 20]
+ode_solver::varlist_to_IVector: The interval on sy_d_0_t: [-20, 20]
+ode_solver::varlist_to_IVector: The interval on tau_0_t: [20, 21]
+ode_solver::varlist_to_IVector: The interval on v_0_t: [0, 10]
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: Exception in Simple_ODE: 
+ode_solver::simple_ODE_forward: no intersection for X_T => UNSAT
+***************** Not branched on Found UNSAT box ***********
+icp_solver::solve: UNSAT
+nra_solver::check(complete) result = false
+nra_solver::check: explanation provided: (size = 72 out of 72)
+	(= 0 sx_env_0_0)
+	(= 0 v_env_0_0)
+	(= 0 Psi_d_0_0)
+	(= 0 tau_0_0)
+	(= 0 delta_0_0)
+	(= 0 Beta_0_0)
+	(= 0 Psi_dot_0_0)
+	(= 0 Psi_0_0)
+	(= 0 sy_d_0_0)
+	(= 0 sx_d_0_0)
+	(= v_0_0 7)
+	(= 0 sy_0_0)
+	(= 0 sx_0_0)
+	(= 1 mode_0)
+	(integral 1 0 time_0 Beta_0_0 Beta_0_t Psi_0_0 Psi_0_t Psi_d_0_0 Psi_d_0_t Psi_dot_0_0 Psi_dot_0_t delta_0_0 delta_0_t sx_0_0 sx_0_t sx_d_0_0 sx_d_0_t sx_env_0_0 sx_env_0_t sy_0_0 sy_0_t sy_d_0_0 sy_d_0_t tau_0_0 tau_0_t v_0_0 v_0_t v_env_0_0 v_env_0_t)
+	!(<= tau_0_t 20)
+	(<= mode_0 1)
+	(<= 1 mode_0)
+	(<= time_0 4)
+	(<= 0 time_0)
+	(<= Beta_0_t 5)
+	(<= -5 Beta_0_t)
+	(<= Beta_0_0 5)
+	(<= -5 Beta_0_0)
+	(<= Psi_0_t 1)
+	(<= -1 Psi_0_t)
+	(<= Psi_0_0 1)
+	(<= -1 Psi_0_0)
+	(<= Psi_d_0_t 5)
+	(<= -5 Psi_d_0_t)
+	(<= Psi_d_0_0 5)
+	(<= -5 Psi_d_0_0)
+	(<= Psi_dot_0_t 5)
+	(<= -5 Psi_dot_0_t)
+	(<= Psi_dot_0_0 5)
+	(<= -5 Psi_dot_0_0)
+	(<= delta_0_t 1)
+	(<= -1 delta_0_t)
+	(<= delta_0_0 1)
+	(<= -1 delta_0_0)
+	(<= sx_0_t 20)
+	(<= -20 sx_0_t)
+	(<= sx_0_0 20)
+	(<= -20 sx_0_0)
+	(<= sx_d_0_t 20)
+	(<= -20 sx_d_0_t)
+	(<= sx_d_0_0 20)
+	(<= -20 sx_d_0_0)
+	(<= sx_env_0_t 20)
+	(<= -20 sx_env_0_t)
+	(<= sx_env_0_0 20)
+	(<= -20 sx_env_0_0)
+	(<= sy_0_t 20)
+	(<= -20 sy_0_t)
+	(<= sy_0_0 20)
+	(<= -20 sy_0_0)
+	(<= sy_d_0_t 20)
+	(<= -20 sy_d_0_t)
+	(<= sy_d_0_0 20)
+	(<= -20 sy_d_0_0)
+	(<= tau_0_t 21)
+	(<= 0 tau_0_t)
+	(<= tau_0_0 21)
+	(<= 0 tau_0_0)
+	(<= v_0_t 10)
+	(<= 0 v_0_t)
+	(<= v_0_0 10)
+	(<= 0 v_0_0)
+	(<= v_env_0_t 10)
+	(<= 0 v_env_0_t)
+	(<= v_env_0_0 10)
+	(<= 0 v_env_0_0)
+============================
+unsat

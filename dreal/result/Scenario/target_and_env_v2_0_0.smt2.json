@@ -1,0 +1,114 @@
+{"traces": 
+[
+[
+{
+	"key": "Beta_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "Psi_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "Psi_d_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "Psi_dot_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "delta_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "sx_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "sx_d_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "sx_env_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "sy_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "sy_d_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "tau_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [0, 0]}
+	]
+}
+, 
+{
+	"key": "v_0_0",
+	"mode": "1",
+	"step": "0",
+	"values": [
+{ "time": [0, 0], "enclosure": [7, 7]}
+	]
+}
+
+]
+]
+}

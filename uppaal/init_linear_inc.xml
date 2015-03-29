@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'><nta><declaration>// Place global declarations here.
+clock Sx;
+clock t;
+const int v_upper=3;
+const int epsilon=1;
+const int Road_length=70;
+const int follow=0;
+const int t1=epsilon/(v_upper-1);
+//const int t1=1;
+const int it1=epsilon+v_upper*t1;
+//const int it1=1;
+int Car_x; 
+int Car_v;
+int Env_v;
+int Env_x;
+int local_time;
+int k;
+int tk;
+int itk;
+int time_temp;
+int position_temp;
+
+int timeGuard() 
+{
+	//tk=epsilon*((v_upper^(k-1))/((v_upper-1)^k) + (v_upper^(k-2))/((v_upper-1)^(k-1)));
+tk=5;	
+return tk;
+}
+
+int positionJump()
+{	
+	itk = epsilon+v_upper*tk;
+	return itk;
+}</declaration><template><name x="5" y="5">Scenario</name><declaration>// Place local declarations here.
+
+</declaration><location id="id0" x="184" y="-80"><label kind="invariant" x="200" y="-88">t&lt;=t1 &amp;&amp; k&lt;=2</label></location><location id="id1" x="536" y="-16"><name x="520" y="-48">Finish</name></location><location id="id2" x="536" y="64"><name x="496" y="80">LaneChange</name></location><location id="id3" x="184" y="64"><name x="176" y="96">DriveStraight</name><label kind="invariant" x="176" y="80">t&lt;=time_temp &amp;&amp; k&lt;100</label></location><location id="id4" x="184" y="-168"><name x="160" y="-200">Initialize</name><urgent/></location><init ref="id4"/><transition><source ref="id0"/><target ref="id3"/><label kind="guard" x="192" y="-40">k==2</label><label kind="assignment" x="192" y="-24">time_temp=timeGuard()</label></transition><transition><source ref="id4"/><target ref="id0"/><label kind="assignment" x="192" y="-152">Sx=epsilon,
+t=0,
+k=1</label></transition><transition><source ref="id0"/><target ref="id0"/><label kind="guard" x="104" y="-112">t==t1</label><label kind="assignment" x="104" y="-64">k=k+1,
+Sx=it1</label><nail x="88" y="-96"/><nail x="88" y="-64"/><nail x="168" y="-72"/></transition><transition><source ref="id3"/><target ref="id3"/><label kind="guard" x="40" y="32">t==time_temp</label><label kind="assignment" x="8" y="80">k=k+1,
+Sx = positionJump(),
+time_temp=timeGuard()</label><nail x="88" y="56"/><nail x="88" y="88"/></transition><transition><source ref="id3"/><target ref="id2"/><label kind="guard" x="320" y="64">Sx&gt; Env_x-follow</label></transition><transition><source ref="id3"/><target ref="id1"/><label kind="guard" x="400" y="16">Sx&gt;=Road_length</label></transition></template><system>// Place template instantiations here.
+scenario = Scenario();
+
+// List one or more processes to be composed into a system.
+system scenario;</system></nta>

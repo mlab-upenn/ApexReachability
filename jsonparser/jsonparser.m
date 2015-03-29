@@ -1,10 +1,9 @@
 function jsonparser(jsonfile, varargin)
-
-% outname = jsonbuild(jsonfile)
+% outname = jsonparser(jsonfile)
 % Obtain min and max of all derivative variables in jsonfile.mat.
 % jsonfile.mat is a struct created by jsonbuild
 %
-% outname = jsonbuild(jsonfile, xxdot)
+% jsonparser(jsonfile, xxdot)
 % In addition to above, plot the derivative variable xdot vs the variable
 % itself x. These are interval plots since x and xdot are given by
 % intervals from dReach-produced json file.

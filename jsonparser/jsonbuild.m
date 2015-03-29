@@ -1,4 +1,12 @@
 function outname = jsonbuild(jsonfile)
+% outname = jsonbuild(jsonfile)
+% Read json file and create a mat from it containing all its
+% contents.
+% The mat is called outname (and has a .mat extension).
+% The mat contains a struct array called signal, which ahs one element per
+% signal in the json file. 
+% Each struct has keys signalName, timesteps and intervals. The last 2 are
+% cells of intervals (an interval is a 2-element array).
 
 fid = fopen([jsonfile,'.json']);
 tline = fgetl(fid);
